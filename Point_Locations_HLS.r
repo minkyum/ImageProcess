@@ -7,6 +7,12 @@ library(rgeos)
 library(foreach)
 library(doMC)
 
+library(matrixStats)
+library(WGCNA)
+library(zoo)
+
+library(RcppRoll)
+
 library(rjson)
 
 
@@ -22,19 +28,11 @@ source(file='/usr3/graduate/mkmoon/GitHub/MSLSP/Development/MSLSP_Diagnostic_Fun
 
 #Tile 
 tile <- '18TYN'
-year <- 2017:2018
-
-# Point Coordinate
-Lon <- -72.1715
-Lat <- 42.5378
-
+year <- 2016:2019
 
 #What data folder
 imgBase <-   '/projectnb/modislc/projects/landsat_sentinel/v1_4/HLS30/'
 chunkBase <- '/projectnb/modislc/projects/landsat_sentinel/MSLSP_HLS30/'
-
-#Define and create output directory
-outFolder <- '/projectnb/modislc/users/mkmoon/ImageProcess/plots/'
 
 #Where is the data?
 imgDir <- paste0(imgBase,tile,'/images/')
@@ -55,7 +53,7 @@ imgYrs <- year
 phenYrs <- year
 
 numCores <- 8
-registerDoMC(numCores)
+registerDoMC(cores=numCores)
 
 
 #Name of shapefile. Must be in same projection as the tile. Must have "id" column
@@ -64,13 +62,12 @@ shpName <- paste0('/projectnb/modislc/projects/landsat_sentinel/MSLSP_assessment
 
 
 ###########################################
-
 theTable <- Extract_Timeseries(tile, imgDir, chunkDir, imgYrs, phenYrs, numCores, params, shpName=shpName,codeVersion='V1') 
 
 
 
-
-
+###########################################
+plot(theTable[[1]]$y2018$filled_dates,theTable[[1]]$y2018$filled_vi)
 
 
       

@@ -31,10 +31,13 @@ tile <- getMODIStileFromLonLat(Lon,Lat)
 outFolder <- '/projectnb/modislc/users/mkmoon/ImageProcess/data'
 
 
-#################
+###########################################
 SaveImageStackAsMatrix(tile, year, outFolder)  
 
 theTable <- LSTpointTimeseries(tile, year, Lon, Lat, outFolder)
+
+
+###########################################
 
       
       
