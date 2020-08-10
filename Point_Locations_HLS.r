@@ -11,6 +11,13 @@ library(rjson)
 
 
 ###########################################
+## Load functions 
+source(file='/usr3/graduate/mkmoon/GitHub/MSLSP/MSLSP_Functions.r')
+source(file='/usr3/graduate/mkmoon/GitHub/MSLSP/Development/MSLSP_Diagnostic_Functions_V1_0.r')
+
+
+
+###########################################
 ##Inputs
 
 #Tile 
@@ -54,11 +61,6 @@ registerDoMC(numCores)
 #Name of shapefile. Must be in same projection as the tile. Must have "id" column
 shpName <- paste0('/projectnb/modislc/projects/landsat_sentinel/MSLSP_assessment/shps/',tile,'_pts.shp')
 
-
-###########################################
-## Load functions 
-source(file='/usr3/graduate/mkmoon/GitHub/MSLSP/MSLSP_Functions.r')
-source(file='/usr3/graduate/mkmoon/GitHub/MSLSP/Development/MSLSP_Diagnostic_Functions_V1_0.r')
 
 
 ###########################################
