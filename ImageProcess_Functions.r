@@ -59,9 +59,7 @@ LSTpointTimeseries <- function(tile, year, Lon, Lat, outFolder){
   pixNum <- setValues(imgBase,1:length(imgBase))
   pixNum <- extract(pixNum,pShp)
   
-  datMat <- matrix(NA,length(imgs),2)
-  datMat[,1] <- dates
-  datMat[,2] <- imgStack[pixNum,]
+  datMat <- data.frame(dates,imgStack[pixNum,])
   
   colnames(datMat) <- c('Date','LST')
   
