@@ -38,7 +38,7 @@ theTable <- LSTpointTimeseries(tile, year, Lon, Lat, outFolder)
 
 
 ###########################################
-
+plot(theTable)
       
       
 
