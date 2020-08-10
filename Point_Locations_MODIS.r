@@ -38,11 +38,7 @@ theTable <- LSTpointTimeseries(tile, year, Lon, Lat, outFolder)
 
 
 ###########################################
-<<<<<<< HEAD
 plot(theTable)
-=======
 
->>>>>>> 13c3976d9405e09eab9ab1a2eac056ae3de69c1c
-      
       
 
