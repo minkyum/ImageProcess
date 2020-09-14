@@ -3,6 +3,7 @@
 Functions for general MODIS and HLS image process
 
 - Extract time sereis for point location
+
   "Point_Locations_MODIS.r"
     With a point coordinate (i.e., longitude and latitude) and a target year, the code give a time sereis of LST
     
